@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5 html</title>
+    <style>
+        body{
+    font-family:Arial,sans-serif;
+    color:#333333;
+    line-height:1.6;
+    margin:40px auto;
+    max-width:800px;
+        }
+
+    header{
+        text-align:center;
+        margin-bottom: 30px;
+
+
+    }
+
+    footer{
+        text-align: center;
+        margin-top: 50px;
+        font-weight: bold;
+
+    }
+
+    .lista-quadrada{
+    list-style-type:square;
+    }
+    .linhadivisoria{
+        border:0;
+        border-top: 2pxsolid #007bff;
+        margin: 30px 0;
+
+    }
+    figcaption {
+        font-size: 0.9em;
+        color: #666;
+        font-style:italic ;
+    }
+
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Meu artigo Moderno</h1>
+        <nav>
+            <a href="#conclusão">Pular direto para a conclusão</a>
+
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Oque aprendemos hoje?</h2>
+            <p>O HTMl5 é focado  na <strong>semântica</strong>.Deixamos a  apresentação visual para o CSS</p>
+
+
+       
+        <ul class="lista-quadrada">
+            <li>Estrutura limpa</li>
+            <li>CSS para o visual </li>
+            <li>Acessibilade melhorada</li>
+
+        </ul>
+    </section>
+    <hr class="linhadivisoria">
+    <section>
+        <h2>Um exemplo</h2>
+        <figure>
+            <img src="https://placehold.co/400x200" alt="Retangulo cinza com o texto 400x200">
+            <figcaption>figura 1 :Exemplo de uma imagem com legenda estrututrada corretamente no HTML5</figcaption>
+        </figure>
+    </section>
+    <section id="conclusão">
+        <h2>Conclusão</h2>
+        <p>A web ficou mais organizada e melhor né?</p>
+
+        <p>Quer saber mais?<a href="https://www.google.com.br" target="_blank">Busque no Google</a></p>
+
+
+    </section>
+    </main>
+    <footer>Vinicius Daniel-Camargo aranha</footer>
+</body>
+</html>
