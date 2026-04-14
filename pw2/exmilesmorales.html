@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ <head>
+<meta charset="UTF-8">
+<title>Exercicio PW2</title>
+<style>
+/*Configurações Globais */
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing:border-box;
+
+}
+body{
+    font-family:'SEGOE UI', Tahoma, Geneva,Verdana,sans-serif;
+    font-size: 16px; /*Base para o calculo de 'em'*/
+    background-color: #0b0e14; /*Fundo escuro estilo gamer */
+    color:#FF0000 
+
+
+}
+/*1. Uso de VH E VW: O header ocupa 70% da altura da tela e 100% da largura */
+header {
+    width:100vw;
+    height:70vh;
+    /*Uso de backgorund moderno cmo  gradiente e imagem */ 
+background: linear-gradient(rgba(0,0,0, 0.7), rgba(138,43,226,0.4)),
+url('https://static0.srcdn.com/wordpress/wp-content/uploads/wm/2023/06/miles-morales-spider-man-across-the-spiderverse.jpg?w=1600&h=900&fit=crop') no-repeat center center;
+background-size:cover;
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+text-align: center;
+/*border moderna substitiundo o atributo*/ 
+border-bottom: 8px solid #8B0000;
+
+}
+header h1 {
+    font-size:5em; /*tamanho gigante relativo a fonte do body */ 
+    text-transform:uppercase;
+    letter-spacing:5px;
+    text-shadow: 3px 3px 10px #000;
+
+}
+header p {
+    font-size:1.5em;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.5);
+    padding:0.5em 1em;
+
+}
+/*2 uso de %: Container centralizado para  o conteudo*/ 
+.main-content {
+    width:90%;
+    max-width:1200px;
+    margin:-50px auto 2em auto;
+    background-color:#1a1f29;
+    padding:3em;
+    border-radius:15px;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.5);
+    position:relative;
+
+
+}
+.game-card {
+    width:46%;
+    margin:2%;
+    float:left;
+    background:#252a35;
+    border:1px solid #3d4451;
+    padding: 1.5em;
+    border-radius:8px;
+    height:450px;
+}
+
+.game-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius: 4px;
+
+}
+
+.game-card h3{
+    margin-top:1em;
+    color:#a155ff;
+    font-size:1.8em;
+
+}
+
+footer{
+    clear:both;
+    width:100%;
+    height:100px;
+    background-color:#000;
+    display:flex;
+    justify-content:center;
+    align-items: center; 
+    margin-top: 2em;
+
+
+}
+
+
+
+
+.btn-play{
+    display:inline-block;
+    margin-top: auto;
+    padding:1em 2em;
+    background-color:#8a2be2;
+    color:white;
+    text-decoration:none;
+    font-weight: bold;
+    border-radius:50px;
+    transition:0.3s;
+    align-self: flex-start;
+
+
+}
+.btn-play:hover{
+    background-color:#a155ff;
+    transform:scale(1.05);
+
+
+}
+</style>
+
+ </head> 
+ <body>
+
+    <header>
+        <h1>START GAME</h1>
+        <P>Domine o código.Construa o seu universo.</P>
+
+    </header>
+    <div class="main-content">
+        <h2>Missões Disponiveis</h2>
+
+        <div class="game-card">
+            <img src="https://i.ytimg.com/vi/BufCTSe9WfY/maxresdefault.jpg" alt="Quest 1">
+            <h3>Boss: Arquitetira do Sistema Operacional</h3>
+            <p>Encare o desafio de enteder como os sistemsa gerenciam o hardware para rodar seus jogos favoritos</p>
+            <a href="#"class="btn-play">INICIAR QUEST</a>
+            </div>
+
+            <div class="game-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0X9JY2Iw2EcTekWfl-mDSHu-1QldamzdOZw&s" alt="Quest 2">
+                <h3>Xp: Design Responsivo</h3>
+                <p>Aprenda a usar % e vh para que seu jogo seja acessível em qualquer tela,do mobile ao pc gamer.</p>
+                <a href="#" class="btn-play">Coletar XP</a>
+
+            </div>
+            <footer>
+                <p>GAME OVER?No. <strong>Keep Coding</strong></p>
+            </footer>
+            </div>
+ </body>  
+</html>
