@@ -1,0 +1,49 @@
+
+CREATE TABLE Jogadores (
+    id_jogador INT PRIMARY KEY,
+    nome VARCHAR(50)
+);
+
+CREATE TABLE Jogos (
+    id_jogo INT PRIMARY KEY,
+    titulo VARCHAR(50)
+);
+
+CREATE TABLE Compras (
+    id_compra INT PRIMARY KEY,
+    id_jogador INT,
+    id_jogo INT
+);
+
+
+INSERT INTO Jogadores VALUES
+(1, 'NinjaPro'),
+(2, 'CatPlayer'),
+(3, 'Ghost');
+
+INSERT INTO Jogos VALUES
+(10, 'Minecraft'),
+(11, 'Free Fire'),
+(12, 'FIFA');
+
+INSERT INTO Compras VALUES
+(100, 1, 10),
+(101, 2, 11);
+
+
+SELECT Jogadores.nome, Jogos.titulo
+FROM Compras
+INNER JOIN Jogadores ON Compras.id_jogador = Jogadores.id_jogador
+INNER JOIN Jogos ON Compras.id_jogo = Jogos.id_jogo;
+
+
+SELECT Jogadores.nome, Jogos.titulo
+FROM Jogadores
+LEFT JOIN Compras ON Jogadores.id_jogador = Compras.id_jogador
+LEFT JOIN Jogos ON Compras.id_jogo = Jogos.id_jogo;
+
+
+SELECT Jogos.titulo, Jogadores.nome
+FROM Jogos
+LEFT JOIN Compras ON Jogos.id_jogo = Compras.id_jogo
+LEFT JOIN Jogadores ON Compras.id_jogador = Jogadores.id_jogador;
