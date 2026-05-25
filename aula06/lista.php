@@ -86,6 +86,6 @@ try {
    <br>
    <a href="index.html">Voltar para o Formulário</a>
 
-<footer>Rodrigo Correa do Nascimento - Camargo Aranha - 2026</footer>
+<footer>Vinicius Daniel Bezerra Pinheiro - Camargo Aranha - 2026</footer>
 </body>
 </html>

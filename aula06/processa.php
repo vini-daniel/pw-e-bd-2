@@ -5,8 +5,8 @@ $usuario='root';
 $senha='';
 
 try {
-    $conexão =new PDO ("mysql.host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
-    $conexão-> setAtTribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    $conexao =new PDO ("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
+    $conexao-> setAtTribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 } catch(PDOexcpeption $e) {
     die("Erro ao conectar com o banco de dados:" . $e-> getMessage());
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $mensagem_recebida=$_POST['mensagem'];
 }
     $sql="INSERT INTO contatos(nome,email,mensagem) VALUES (:nome, :email, :mensagem)";
-    $stmt=$conexão ->prepare($sql);
+    $stmt=$conexao ->prepare($sql);
 
     $stmt-> bindParam(':nome', $nome_recebido);
     $stmt-> bindParam(':email',$email_recebido);
