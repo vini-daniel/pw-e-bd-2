@@ -63,7 +63,6 @@ try {
     <th>Nome/Sobrevivente</th>
     <th>E-mail de Contato</th>
     <th>Conteúdo da Mensagem</th>
-    <th>Ação</th>
    </tr>
    
    <?php foreach ($mensagens as $linha): ?>
