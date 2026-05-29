@@ -15,17 +15,17 @@
     $email = $_POST['email'];
     $mensagem= $_POST['mensagem'];
   
-    $sql= "UPDATE contatos SET NOME = :nome, EMAIL=:email, MENSAGEM= :mensagem WHERE ID= :id";
+    $sql= "UPDATE contatos SET nome = :nome, email=:email, mensagem= :mensagem WHERE id= :id";
     $stmt= $conexao->prepare($sql);
 
     $stmt->bindParam(':nome', $nome);
-    $stmt->bnindParam(':email', $email);
+    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':mensagem', $mensagem);
     $stmt->bindParam(':id', $id, PDO:: PARAM_INT);
     
     $stmt->execute();
 
-    header('Location: listar.php');
+    header('Location: lista.php');
     exit();
     } 
     else{

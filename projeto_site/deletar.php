@@ -18,7 +18,7 @@ try {
         $stmt->execute();
 
     }
-     header("location: listar.php");
+     header("location: lista.php");
      exit();
 
 }catch (PDOException $e) {

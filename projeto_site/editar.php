@@ -6,15 +6,15 @@ $senha='';
 $contato=null;
 
 try{
-    $conexao= new PDO("mysql:host=$host;dbname=$dbname;chasset=utf8",$usuario, $senha);
-    $conexap->setAttribute(PDO::ATTR_MODE, PDO::ERRMODE_EXCEPTION);
+    $conexao= new PDO("mysql:host=$host;dbname=$dbname;charset=utf8",$usuario, $senha);
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (isset($_GET['id']) && is_numeric($_GET['id'])){
         $id=$_GET['id'];
 
         $sql="SELECT * FROM contatos WHERE ID = :id";
-        $stmt=conexao->prepare($sql);
-        $stmt-bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt= $conexao->prepare($sql);
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
         $stmt-> execute();
 
         $contato=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -38,26 +38,26 @@ try{
     <h2>Editar Contato</h2>
     <?php if ($contato): ?>
     <form action="atualizar.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $contato['ID'];?>">
+    <input type="hidden" name="id" value="<?php echo $contato['id'];?>">
 
 
     <label>Nome:</label><br>
-    <input type="text" name="nome" value="<?php echo htmlspecialchars($contato['NOME']); ?>" required><br><br>
+    <input type="text" name="nome" value="<?php echo htmlspecialchars($contato['nome']); ?>" required><br><br>
     
-    <label>E-mail:</label></br>
-    <input type="email" name="email" value="<?php echo htmlspecialchars($contato['EMAIL']); ?>" required><br><br>
+    <label>E-mail:</label><br>
+    <input type="email" name="email" value="<?php echo htmlspecialchars($contato['email']); ?>" required><br><br>
 
     <label>Mensagem</label><br>
-    <textarea name="mensagem" required><?php echo htmlspecialchars($contato['MENSAGEM']); ?></textarea><br><br>
+    <textarea name="mensagem" required><?php echo htmlspecialchars($contato['mensagem']); ?></textarea><br><br>
     <button type="submit">Salvar Alterações</button>
 </form>
-<?php esle: ?>
+<?php else: ?>
 <div style="color: red; border: 1px solid red; padding:10px;">
- <strong>Atenção:<strong> Contato não encontrado ou ID Inválido. Verifique se a URL está correta (ex: editar.php?id=1).
+ <strong>Atenção:</strong> Contato não encontrado ou ID Inválido. Verifique se a URL está correta (ex: editar.php?id=1).
 </div>
 <?php endif; ?>
 <br>
-<a href="listar.php">Voltar para a lista</a>
+<a href="lista.php">Voltar para a lista</a>
    
 </body>
 </html>
